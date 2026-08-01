@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://patient.samedi.de/.well-known/openid-configuration
+docs: https://wiki.samedi.de/display/doc/Booking+API
+schemes:
+- name: OAuth2
+  source: https://patient.samedi.de/.well-known/openid-configuration
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://patient.samedi.de/oauth/authorize
+    tokenUrl: https://patient.samedi.de/oauth/token
+  - flow: clientCredentials
+    tokenUrl: https://patient.samedi.de/oauth/token
+scopes:
+- scope: openid
+  description: OpenID Connect authentication; returns an ID token.
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: basic
+  description: Basic access to the authorized user context.
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: profile:read
+  description: Read the patient/user profile.
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: profile_read
+  description: Read the patient/user profile (underscore variant).
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: appointments:read
+  description: Read the user's appointments.
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: appointments:book
+  description: Book appointments on behalf of the user.
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: appointment_read
+  description: Read appointments (underscore variant).
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: appointment_write
+  description: Create or modify appointments (underscore variant).
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: appointment_guest_lookup
+  description: Look up appointments for a guest (non-registered) booking.
+  sources: ['well-known/samedi-openid-configuration.json']
+- scope: appointment_guest_write
+  description: Create or modify appointments for a guest (non-registered) booking.
+  sources: ['well-known/samedi-openid-configuration.json']

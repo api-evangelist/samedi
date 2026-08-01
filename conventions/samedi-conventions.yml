@@ -1,0 +1,43 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  github.com/samedi/omniauth-samedi + patient.samedi.de OIDC discovery +
+  github.com/samedi/rails-booking-api
+authentication:
+  style: oauth2-bearer
+  detail: >-
+    OAuth 2.0 / OpenID Connect. Access tokens are sent as
+    `Authorization: Bearer <token>`. See authentication/samedi-authentication.yml
+    and scopes/samedi-scopes.yml.
+versioning:
+  style: uri-path
+  detail: >-
+    API surfaces are versioned in the URL path. The Booking API is at
+    /api/booking/v3 and its OAuth surface at /api/auth/v2 (per the official
+    omniauth-samedi strategy). The OIDC provider lives at /oauth.
+  current:
+    booking_api: v3
+    booking_auth: v2
+base_urls:
+  booking_api: https://patient.samedi.de/api/booking/v3
+  booking_auth: https://patient.samedi.de/api/auth/v2
+  oidc_issuer: https://patient.samedi.de
+media_type: application/json
+idempotency:
+  supported: unknown
+  note: >-
+    No documented idempotency-key contract was found on the public surface
+    (the Booking API wiki was not reachable at capture time). Not asserting
+    idempotency support.
+pagination:
+  style: unknown
+  note: Not documented on the reachable public surface.
+error_envelope:
+  note: >-
+    Not documented on the reachable public surface; the omniauth reference
+    client surfaces raw HTTP status codes (e.g. error_<status>_getting_user_info).
+cross_links:
+  authentication: authentication/samedi-authentication.yml
+  scopes: scopes/samedi-scopes.yml
+  lifecycle: lifecycle/samedi-lifecycle.yml
+  conformance: conformance/samedi-conformance.yml

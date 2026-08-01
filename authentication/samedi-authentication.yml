@@ -1,0 +1,44 @@
+generated: '2026-07-21'
+method: searched
+source: https://patient.samedi.de/.well-known/openid-configuration
+docs: https://wiki.samedi.de/display/doc/Booking+API
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode, clientCredentials, refreshToken]
+  token_endpoint_auth_methods: [client_secret_basic, client_secret_post]
+notes: >-
+  samedi exposes OAuth 2.0 / OpenID Connect at patient.samedi.de. Two versioned
+  OAuth surfaces are documented: the OIDC provider at /oauth/* (issuer
+  https://patient.samedi.de) and the Booking API OAuth at /api/auth/v2/* used by
+  the official omniauth-samedi strategy. API requests are authorized with a
+  Bearer access token. API credentials are requested at
+  https://patient.samedi.de/api/signup.
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  openIdConnectUrl: https://patient.samedi.de/.well-known/openid-configuration
+  issuer: https://patient.samedi.de
+  id_token_signing_alg_values_supported: [RS256]
+  subject_types_supported: [pairwise]
+  sources: ['well-known/samedi-openid-configuration.json']
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://patient.samedi.de/oauth/authorize
+    tokenUrl: https://patient.samedi.de/oauth/token
+  - flow: clientCredentials
+    tokenUrl: https://patient.samedi.de/oauth/token
+  endpoints:
+    revocation_endpoint: https://patient.samedi.de/oauth/revoke
+    introspection_endpoint: https://patient.samedi.de/oauth/introspect
+    userinfo_endpoint: https://patient.samedi.de/oauth/userinfo
+    jwks_uri: https://patient.samedi.de/oauth/discovery/keys
+  sources: ['well-known/samedi-oauth-authorization-server.json']
+- name: BookingAPIOAuth
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://patient.samedi.de/api/auth/v2/authorize
+    tokenUrl: https://patient.samedi.de/api/auth/v2/token
+  sources: ['https://github.com/samedi/omniauth-samedi']

@@ -1,7 +1,29 @@
 aid: samedi
 name: samedi
-description: samedi is a company surfaced as a portfolio company of point-nine and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  samedi is a Berlin-based healthcare software provider delivering smart
+  scheduling and coordination software for medical practices, clinics and
+  hospitals across the DACH region. Its platform covers online appointment
+  booking, patient portals, video consultations, digital intake forms, AI phone
+  assistance, resource and staff planning, and automated patient communication,
+  serving thousands of healthcare institutions. For developers, samedi exposes an
+  OAuth2 / OpenID-Connect Booking API and a Portal API, publishes open-source
+  FHIR, HL7 and CalDAV integration gateways plus Ruby and PHP reference clients,
+  and offers more than 40 interfaces to practice-management (PMS) and
+  hospital-information (HIS) systems.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.samedi.com/en
 url: https://raw.githubusercontent.com/api-evangelist/samedi/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,15 +33,84 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
-apis: []
+- Healthcare
+- Scheduling
+- Appointments
+- Booking
+- Patient Engagement
+- OAuth
+- FHIR
+- Telemedicine
+- Germany
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- name: samedi Booking API
+  description: >-
+    OAuth2 / OpenID-Connect secured API to discover bookable resources and book
+    and manage patient appointments for a clinic. Versioned in the URL path
+    (booking v3, auth v2).
+  humanURL: https://patient.samedi.de/api/signup
+  baseURL: https://patient.samedi.de/api/booking/v3
+  tags:
+  - Booking
+  - Appointments
+  - Healthcare
+  - OAuth
+  properties:
+  - type: Authentication
+    url: authentication/samedi-authentication.yml
+  - type: OAuthScopes
+    url: scopes/samedi-scopes.yml
+  - type: Conventions
+    url: conventions/samedi-conventions.yml
+  - type: Lifecycle
+    url: lifecycle/samedi-lifecycle.yml
+  - type: Conformance
+    url: conformance/samedi-conformance.yml
 common:
 - type: Website
-  url: https://www.samedi.de/en
+  url: https://www.samedi.com/en
+- type: GitHubOrganization
+  url: https://github.com/samedi
+- type: StatusPage
+  url: https://status.samedi.de
+- type: SignUp
+  url: https://patient.samedi.de/api/signup
+- type: Login
+  url: https://app.samedi.de/login
+- type: TermsOfService
+  url: https://legal.samedi.de/en/for_customers/tos/
+- type: PrivacyPolicy
+  url: https://legal.samedi.de/en/for_customers/privacy_policy_in_general/
+- type: Authentication
+  url: authentication/samedi-authentication.yml
+- type: OAuthScopes
+  url: scopes/samedi-scopes.yml
+- type: WellKnown
+  url: well-known/samedi-well-known.yml
+- type: Packages
+  url: packages/samedi-packages.yml
+- type: SDKs
+  url: packages/samedi-packages.yml
+- type: Conventions
+  url: conventions/samedi-conventions.yml
+- type: Lifecycle
+  url: lifecycle/samedi-lifecycle.yml
+- type: Conformance
+  url: conformance/samedi-conformance.yml
+- type: DomainSecurity
+  url: security/samedi-domain-security.yml
+- type: LLMsTxt
+  url: llms/samedi-llms.txt
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 11
+  pass: local-v1

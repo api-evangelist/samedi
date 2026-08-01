@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: >-
+  patient.samedi.de OIDC discovery + github.com/samedi (fhirgateway, hl7gateway,
+  caldav-go)
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Authorization server metadata published at
+    /.well-known/oauth-authorization-server (RFC 8414); authorization_code,
+    client_credentials and refresh_token grants supported.
+- id: oidc
+  conforms: true
+  evidence: >-
+    OpenID Connect discovery document at /.well-known/openid-configuration;
+    id_token signed RS256; userinfo + jwks endpoints present.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with metadata.
+- id: fhir
+  conforms: true
+  evidence: >-
+    samedi publishes an open-source fhirgateway (github.com/samedi/fhirgateway)
+    for FHIR-standard healthcare integration.
+- id: hl7
+  conforms: true
+  evidence: >-
+    samedi publishes an open-source hl7gateway (github.com/samedi/hl7gateway)
+    for HL7 medical data exchange.
+- id: caldav
+  conforms: true
+  evidence: >-
+    samedi publishes caldav-go (github.com/samedi/caldav-go), a CalDAV library.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json usage located on the reachable surface.

@@ -1,0 +1,23 @@
+generated: '2026-07-21'
+method: searched
+source: https://status.samedi.de + github.com/samedi/omniauth-samedi
+versioning:
+  scheme: uri-path
+  current:
+    booking_api: v3
+    booking_auth: v2
+  docs: https://wiki.samedi.de/display/doc/Booking+API
+status_page: https://status.samedi.de
+status_page_provider: Atlassian Statuspage
+status_components:
+- samedi for Professionals (app.samedi.de)
+- My Patient Portal (MPP)
+- samedi Video Consultation
+- Portal API
+- samedi for Patients (patient.samedi.de)
+- Booking API
+- samedi Homepage (www.samedi.com)
+deprecation:
+  policy_url: null
+  sunset_header: unknown
+  note: No public deprecation policy located on the reachable surface.

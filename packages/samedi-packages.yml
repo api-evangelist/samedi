@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: rubygems.org + pkg.go.dev + github.com/samedi
+packages:
+- language: ruby
+  registry: rubygems
+  name: omniauth-samedi
+  url: https://rubygems.org/gems/omniauth-samedi
+  install: gem install omniauth-samedi
+  official: true
+  description: samedi Booking API authentication strategy for OmniAuth (OAuth2).
+  repo: https://github.com/samedi/omniauth-samedi
+- language: go
+  registry: pkg.go.dev
+  name: github.com/samedi/caldav-go
+  url: https://pkg.go.dev/github.com/samedi/caldav-go
+  install: go get github.com/samedi/caldav-go
+  official: true
+  description: Golang library to handle CalDAV requests (published by the samedi org).
+  repo: https://github.com/samedi/caldav-go
+reference_implementations:
+- language: ruby
+  name: rails-booking-api
+  url: https://github.com/samedi/rails-booking-api
+  description: Reference implementation of the samedi Booking API client in Ruby on Rails.
+  official: true
+- language: php
+  name: php-booking-api
+  url: https://github.com/samedi/php-booking-api
+  description: Sample implementation of the samedi Booking API integration in PHP.
+  official: true

@@ -1,0 +1,22 @@
+generated: '2026-07-21'
+method: searched
+source: live probe of /.well-known/ on samedi hosts
+host: https://patient.samedi.de
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: samedi-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: samedi-oauth-authorization-server.json
+- path: /.well-known/security.txt
+  status: 404
+other_hosts_probed:
+- host: https://app.samedi.de
+  results:
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/security.txt, status: 404}
+- host: https://www.samedi.com
+  results:
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/security.txt, status: 404}

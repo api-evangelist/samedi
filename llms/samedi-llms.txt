@@ -1,0 +1,32 @@
+# samedi
+
+> samedi is a Berlin-based healthcare software provider offering smart scheduling and coordination software for medical practices, clinics and hospitals — online appointment booking, patient portals, video consultations, digital forms, resource planning and workflow automation. It exposes an OAuth2/OpenID-Connect Booking API and a Portal API, plus open-source FHIR/HL7/CalDAV integration gateways, and offers 40+ interfaces to practice-management (PMS) and hospital-information (HIS) systems.
+
+## APIs
+- [Booking API](https://patient.samedi.de/api/booking/v3): OAuth2-secured API to book and manage appointments for a clinic. Base URL https://patient.samedi.de/api/booking/v3.
+- [Booking API docs](https://wiki.samedi.de/display/doc/Booking+API): Official Booking API documentation wiki.
+- [API signup](https://patient.samedi.de/api/signup): Request API credentials.
+
+## Authentication
+- [OpenID Connect discovery](https://patient.samedi.de/.well-known/openid-configuration): OIDC provider metadata (issuer https://patient.samedi.de).
+- [OAuth Authorization Server metadata](https://patient.samedi.de/.well-known/oauth-authorization-server): RFC 8414 metadata.
+- Scopes: openid, basic, profile:read, appointments:read, appointments:book, appointment_read, appointment_write, appointment_guest_lookup, appointment_guest_write.
+- Grants: authorization_code, client_credentials, refresh_token.
+
+## SDKs & reference clients
+- [omniauth-samedi](https://rubygems.org/gems/omniauth-samedi): Ruby OmniAuth OAuth2 strategy for the samedi Booking API.
+- [caldav-go](https://pkg.go.dev/github.com/samedi/caldav-go): Go CalDAV library.
+- [rails-booking-api](https://github.com/samedi/rails-booking-api): Ruby on Rails reference Booking API client.
+- [php-booking-api](https://github.com/samedi/php-booking-api): PHP Booking API sample integration.
+
+## Integration gateways (open source)
+- [fhirgateway](https://github.com/samedi/fhirgateway): FHIR-standard integration.
+- [hl7gateway](https://github.com/samedi/hl7gateway): HL7 medical data exchange.
+
+## Docs
+- [Homepage](https://www.samedi.com/en): Product overview.
+- [Integrations](https://www.samedi.com/en/integrations): 40+ PMS/HIS interfaces.
+- [Status](https://status.samedi.de): Atlassian Statuspage (Booking API, Portal API and other components).
+- [GitHub org](https://github.com/samedi): Open-source clients and gateways.
+- [Terms of Service](https://legal.samedi.de/en/for_customers/tos/)
+- [Privacy Policy](https://legal.samedi.de/en/for_customers/privacy_policy_in_general/)
