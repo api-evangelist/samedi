@@ -41,6 +41,17 @@ tags:
 - Appointments
 - Booking
 - Patient Engagement
+- Authentication
+- FHIR
+- Telemedicine
+- Germany
+tags_raw:
+- Company
+- Healthcare
+- Scheduling
+- Appointments
+- Booking
+- Patient Engagement
 - OAuth
 - FHIR
 - Telemedicine
@@ -59,6 +70,11 @@ apis:
   humanURL: https://patient.samedi.de/api/signup
   baseURL: https://patient.samedi.de/api/booking/v3
   tags:
+  - Booking
+  - Appointments
+  - Healthcare
+  - Authentication
+  tags_raw:
   - Booking
   - Appointments
   - Healthcare
